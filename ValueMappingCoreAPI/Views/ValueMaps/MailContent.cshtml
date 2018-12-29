@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ValueMappingCoreAPI.Models.MapViewModels.ValueMapsModel>
+<table class="table" style="border:solid;color:silver">
+    
+    <thead style="border:solid;color:red">
+        <tr style="border:solid;color:yellow">
+            <th>User</th>
+            <th>IP</th>
+        </tr>
+        <tr>
+            <td>User</td>
+            <td>IP</td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.System)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValuationFunction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Threshold)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransdateTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody style="border:solid;color:goldenrod">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.System)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValuationFunction)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Threshold)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TransdateTime)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

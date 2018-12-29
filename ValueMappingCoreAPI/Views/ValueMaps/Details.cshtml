@@ -1,0 +1,56 @@
+﻿@model ValueMappingCoreAPI.Models.ValueMaps
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ValueMaps</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.System)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.System.SystemName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValuationFunction)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValuationFunction)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Threshold)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Threshold)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Uid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Uid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TransdateTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TransdateTime)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

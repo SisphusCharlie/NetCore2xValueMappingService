@@ -1,0 +1,49 @@
+﻿@{
+    var sysTypes = ViewBag.SysTypes as IEnumerable<SelectListItem>;
+    var AllSelect = ViewBag.AllSelect;
+}
+
+@model ValueMappingCoreAPI.Models.ValueMaps
+
+@{
+            ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>ID=@Model.Id</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="ValueMaps" asp-action="Edit" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+
+                <label asp-for="System">System AllSystem:(@AllSelect)</label>
+                <select asp-for="SystemId" asp-items="sysTypes" autofocus class="form-control"></select>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="ValuationFunction" class="control-label"></label>
+                <input asp-for="ValuationFunction" class="form-control" />
+                <span asp-validation-for="ValuationFunction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Threshold" class="control-label"></label>
+                <input asp-for="Threshold" class="form-control" />
+                <span asp-validation-for="Threshold" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

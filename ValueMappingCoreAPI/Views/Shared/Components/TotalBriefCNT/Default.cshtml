@@ -1,0 +1,32 @@
+﻿@model Dictionary<string,int>
+@{
+    Layout = null;
+}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Rank</h3>
+    </div>
+    <div class=" table-bordered">
+        <table class="table-striped">
+           <thead> 
+               <tr>
+                <td>ValuationFunction</td>
+                <td>CNT</td>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Key</td>
+                    <td>@item.Value</td>
+                </tr>
+
+            }
+            </tbody>
+         </table>
+    </div>
+
+
+</div>
+
